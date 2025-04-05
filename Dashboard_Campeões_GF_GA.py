@@ -71,9 +71,9 @@ def generate_league_checklist(league_name):
                 {'label': 'Melhor Ataque', 'value': 'Ataque'},
                 {'label': 'Melhor Defesa', 'value': 'Defesa'},
                 {'label': 'Melhor Ataque e Defesa', 'value': 'Ataque e Defesa'},
-                {'label': 'Não teve destaques', 'value': '0'}
+                {'label': 'Não teve destaques', 'value': 'Nenhum Destaque'}
             ],
-            value=['Ataque', 'Defesa', 'Ataque e Defesa', '0'],
+            value=['Ataque', 'Defesa', 'Ataque e Defesa', 'Nenhum Destaque'],
             labelStyle={'display': 'block'}
         )
     ], style={'margin-bottom': '20px'})
