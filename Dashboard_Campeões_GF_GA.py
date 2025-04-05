@@ -54,6 +54,7 @@ leagues = df['Campeonato'].unique()
 performance_types = ['Ataque', 'Defesa', 'Ataque e Defesa', '0']
 
 app = Dash(__name__)
+server = app.server
 
 def generate_league_checklist(league_name):
     return html.Div([
