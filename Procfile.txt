@@ -1,1 +1,1 @@
-web: gunicorn app:Dashboard_Campeões_GF_GA.py
+web: gunicorn Dashboard_Campeões_GF_GA.py:app
