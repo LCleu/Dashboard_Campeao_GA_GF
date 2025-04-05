@@ -50,7 +50,7 @@ df.columns = df.columns.str.strip()
 df['Melhor'] = df['Melhor'].str.strip()
 df['Campeonato'] = df['Campeonato'].str.strip()
 
-leagues = df['Campeonato'].unique()
+leagues = df['Campeonato'].dropna().unique()
 performance_types = ['Ataque', 'Defesa', 'Ataque e Defesa', '0']
 
 app = Dash(__name__)
