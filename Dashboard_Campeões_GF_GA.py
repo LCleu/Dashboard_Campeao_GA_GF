@@ -156,44 +156,7 @@ def update_graph(*selected_performances):
     )
 
     return fig
-    filtered_df = pd.DataFrame()
 
-    for i, league in enumerate(leagues):
-        perf_list = selected_performances[i]
-        if perf_list:
-            filtered = df[(df['Campeonato'] == league) & (df['Melhor'].isin(perf_list))]
-            filtered_df = pd.concat([filtered_df, filtered])
-
-    fig = go.Figure()
-    for _, row in filtered_df.iterrows():
-        club = row['Squad']
-        logo_url = club_logos.get(club)
-        if logo_url:
-            fig.add_layout_image(
-                dict(
-                    source=logo_url,
-                    x=row['GA'],
-                    y=row['GF'],
-                    xref="x",
-                    yref="y",
-                    sizex=5.5,
-                    sizey=5.5,
-                    xanchor="center",
-                    yanchor="middle",
-                    layer="above"
-                )
-            )
-
-    fig.update_layout(
-        title='Gols Marcados (GF) vs Gols Sofridos (GA)',
-        xaxis_title='Gols Sofridos',
-        yaxis_title='Gols Marcados',
-        xaxis=dict(range=[df['GA'].min()-2, df['GA'].max()+2]),
-        yaxis=dict(range=[df['GF'].min()-2, df['GF'].max()+2]),
-        height=700
-    )
-
-    return fig
 
 for league in leagues:
     @app.callback(
@@ -208,3 +171,4 @@ for league in leagues:
 
 if __name__ == '__main__':
     app.run(debug=True)
+
